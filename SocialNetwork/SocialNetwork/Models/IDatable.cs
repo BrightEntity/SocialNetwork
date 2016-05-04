@@ -20,8 +20,7 @@ namespace SocialNetwork.Models
 
         event CreationEventHandler Created;
         event ModificationEventHandler Modified;
-
-        void OnCreated(CreationEventArgs e);
-        void OnModified(ModificationEventArgs e);
+        
     }
+    
 }

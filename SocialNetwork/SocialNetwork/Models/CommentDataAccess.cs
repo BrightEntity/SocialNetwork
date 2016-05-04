@@ -14,6 +14,8 @@ namespace SocialNetwork.Models
         public DbSet<Reaction> Reactions { get; set; }
         public DbSet<ReactionType> ReactionTypes { get; set; }
 
+        
+
         public override int SaveChanges()
         {
             foreach (var item in ChangeTracker.Entries())
