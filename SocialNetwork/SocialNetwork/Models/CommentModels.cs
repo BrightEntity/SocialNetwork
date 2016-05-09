@@ -22,8 +22,10 @@ namespace SocialNetwork.Models
     {
         public static ICollection<Comment> GetComments(this ICommentable commentable)
         {
+            
             return commentable.Comments;
         }
+        
     }
 
     public interface ICommentable

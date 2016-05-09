@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,6 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 
 namespace SocialNetwork.Models
 {
@@ -13,6 +15,11 @@ namespace SocialNetwork.Models
     {
         [Key]
         public long TimelineID { get; set; }
+
+        public long OwnerID { get; set; }
+
+        [ForeignKey("OwnerID")]
+        public virtual Timelinable Owner { get; set; }
 
         public virtual ICollection<IdentityUser> Followers { get; set; }
     }
