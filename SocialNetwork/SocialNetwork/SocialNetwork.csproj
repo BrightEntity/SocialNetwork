@@ -238,10 +238,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommentDataAccess.cs" />
     <Compile Include="Models\CommentModels.cs" />
-    <Compile Include="Models\DbContextBase.cs" />
     <Compile Include="Models\IDatable.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\IForeignKeyAttribute.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ReactionModels.cs" />
     <Compile Include="Models\TimelinableModels.cs" />
