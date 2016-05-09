@@ -19,7 +19,7 @@ namespace SocialNetwork.Models
         public long OwnerID { get; set; }
 
         [ForeignKey("OwnerID")]
-        public virtual Timelinable Owner { get; set; }
+        public virtual Profile Owner { get; set; }
 
         public virtual ICollection<IdentityUser> Followers { get; set; }
     }

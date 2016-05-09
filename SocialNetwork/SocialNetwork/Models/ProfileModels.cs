@@ -1,18 +1,23 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SocialNetwork.Models
 {
-    public abstract class Timelinable
+    public abstract class Profile
     {
         [Key]
         public long Id { get; set; }
 
         public virtual string DisplayName { get; }
+
+        public long TimelineID { get; set; }
+        [ForeignKey("TimelineID")]
+        public virtual Timeline Timeline { get; set; }
     }
 
-    public class SocialProfile : Timelinable
+    public class SocialProfile : Profile
     {
         public string UserID { get; set; }
         [ForeignKey("UserID")]
@@ -32,9 +37,16 @@ namespace SocialNetwork.Models
 
     }
 
-    public class PageProfile : Timelinable
+    public class PageProfile : Profile
     {
         public string Name { get; set; }
+
+        public PageProfile()
+        {
+            Owners = new HashSet<IdentityUser>();
+        }
+        
+        public virtual ICollection<IdentityUser> Owners { get; set; }
 
         public override string DisplayName
         {

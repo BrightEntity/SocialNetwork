@@ -242,7 +242,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ReactionModels.cs" />
-    <Compile Include="Models\TimelinableModels.cs" />
+    <Compile Include="Models\ProfileModels.cs" />
     <Compile Include="Models\TimelineModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
