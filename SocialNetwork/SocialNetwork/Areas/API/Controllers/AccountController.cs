@@ -10,7 +10,7 @@ namespace SocialNetwork.Areas.API.Controllers
 {
     public class AccountController : ApiController
     {
-        ApplicationUser
+        
 
         // GET: api/Account
         public IEnumerable<string> Get()

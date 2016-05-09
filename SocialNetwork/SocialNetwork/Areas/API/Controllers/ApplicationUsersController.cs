@@ -11,6 +11,7 @@ using System.Web.Http.ModelBinding;
 using System.Web.Http.OData;
 using System.Web.Http.OData.Routing;
 using SocialNetwork.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace SocialNetwork.Areas.API.Controllers
 {

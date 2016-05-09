@@ -41,7 +41,7 @@ namespace SocialNetwork.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Comment>().HasMany<object>(e => { typeof(DbContext).GetProperties() })
+            
 
             base.OnModelCreating(modelBuilder); 
         }
