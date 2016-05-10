@@ -16,9 +16,7 @@ namespace SocialNetwork.Models
         [Key]
         public long TimelineID { get; set; }
 
-        public long OwnerID { get; set; }
-
-        [ForeignKey("OwnerID")]
+        [InverseProperty("Timeline")]
         public virtual Profile Owner { get; set; }
 
         public virtual ICollection<IdentityUser> Followers { get; set; }

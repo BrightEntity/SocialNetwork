@@ -1,0 +1,20 @@
+﻿@model string
+@{
+    ViewBag.Title = "Recherche";
+}
+
+<h2>Recherche pour @Model</h2>
+
+<div class="row">
+    <div class="col-md-3 list-group">
+        <a href="@Url.Action("Index", "Search", new { Search = Model })" class="list-group-item active">Tout</a>
+        <a href="@Url.Action("Users", "Search", new { Search = Model }) " class="list-group-item">Personnes</a>
+        <a href="@Url.Action("Pages", "Search", new { Search = Model })" class="list-group-item">Pages</a>
+        <a href="@Url.Action("Groupes", "Search", new { Search = Model })" class="list-group-item">Groupes</a>
+        <a href="@Url.Action("Events", "Search", new { Search = Model })" class="list-group-item">Evénements</a>
+    </div>
+
+    <div class="col-md-9">
+        Results
+    </div>
+</div>

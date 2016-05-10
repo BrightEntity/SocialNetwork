@@ -16,6 +16,11 @@ namespace SocialNetwork.Models
         [ForeignKey("SocialProfileID")]
         public virtual SocialProfile SocialProfile { get; set; }
 
+        public ApplicationUser()
+        {
+            SocialProfile = new SocialProfile();
+        }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Notez qu'authenticationType doit correspondre à l'élément défini dans CookieAuthenticationOptions.AuthenticationType
@@ -37,6 +42,15 @@ namespace SocialNetwork.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<SocialNetwork.Models.ApplicationUser> ApplicationUsers { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Profile>().HasRequired<Timeline>(e => e.Timeline).WithRequiredPrincipal(e => e.Owner).Map(e => e.MapKey("TimelineID"));
+            base.OnModelCreating(modelBuilder); 
+        }
+
+        public DbSet<Profile> Profiles { get; set; }
+
+
+        //public System.Data.Entity.DbSet<SocialNetwork.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }

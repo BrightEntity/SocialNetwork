@@ -14,7 +14,13 @@ namespace SocialNetwork.Models
 
         public long TimelineID { get; set; }
         [ForeignKey("TimelineID")]
-        public virtual Timeline Timeline { get; set; }
+        public Timeline Timeline { get; set; }
+
+        public Profile()
+        {
+            Timeline = new Timeline();
+        }
+        
     }
 
     public class SocialProfile : Profile

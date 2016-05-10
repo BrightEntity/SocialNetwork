@@ -19,14 +19,14 @@ namespace SocialNetwork.Areas.API.Controllers
         // GET: api/ApplicationUsers1
         public IQueryable<ApplicationUser> GetApplicationUsers()
         {
-            return db.ApplicationUsers;
+            return db.Users;
         }
 
         // GET: api/ApplicationUsers1/5
         [ResponseType(typeof(ApplicationUser))]
         public IHttpActionResult GetApplicationUser(string id)
         {
-            ApplicationUser applicationUser = db.ApplicationUsers.Find(id);
+            ApplicationUser applicationUser = db.Users.Find(id);
             if (applicationUser == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace SocialNetwork.Areas.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.ApplicationUsers.Add(applicationUser);
+            db.Users.Add(applicationUser);
 
             try
             {
@@ -104,13 +104,13 @@ namespace SocialNetwork.Areas.API.Controllers
         [ResponseType(typeof(ApplicationUser))]
         public IHttpActionResult DeleteApplicationUser(string id)
         {
-            ApplicationUser applicationUser = db.ApplicationUsers.Find(id);
+            ApplicationUser applicationUser = db.Users.Find(id);
             if (applicationUser == null)
             {
                 return NotFound();
             }
 
-            db.ApplicationUsers.Remove(applicationUser);
+            db.Users.Remove(applicationUser);
             db.SaveChanges();
 
             return Ok(applicationUser);
@@ -127,7 +127,7 @@ namespace SocialNetwork.Areas.API.Controllers
 
         private bool ApplicationUserExists(string id)
         {
-            return db.ApplicationUsers.Count(e => e.Id == id) > 0;
+            return db.Users.Count(e => e.Id == id) > 0;
         }
     }
 }

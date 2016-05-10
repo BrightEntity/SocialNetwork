@@ -282,3 +282,6 @@ C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\b
 C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\bin\ru\System.Spatial.resources.dll
 C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\obj\Debug\SocialNetwork.Migrations.init.resources
+C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\obj\Debug\SocialNetwork.csproj.GenerateResource.Cache
+C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\obj\Debug\SocialNetwork.Migrations.Inheritance.resources

@@ -227,15 +227,24 @@
     <Compile Include="Areas\API\APIAreaRegistration.cs" />
     <Compile Include="Areas\API\Controllers\AccountController.cs" />
     <Compile Include="Areas\API\Controllers\ApplicationUsers1Controller.cs" />
-    <Compile Include="Areas\API\Controllers\ApplicationUsersController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsFeedController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605100943207_init.cs" />
+    <Compile Include="Migrations\201605100943207_init.Designer.cs">
+      <DependentUpon>201605100943207_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605100959208_Inheritance.cs" />
+    <Compile Include="Migrations\201605100959208_Inheritance.Designer.cs">
+      <DependentUpon>201605100959208_Inheritance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommentDataAccess.cs" />
     <Compile Include="Models\CommentModels.cs" />
@@ -312,6 +321,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\NewsFeed\Index.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -327,6 +337,14 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605100943207_init.resx">
+      <DependentUpon>201605100943207_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605100959208_Inheritance.resx">
+      <DependentUpon>201605100959208_Inheritance.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
