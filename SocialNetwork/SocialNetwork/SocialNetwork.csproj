@@ -228,6 +228,7 @@
     <Compile Include="Areas\API\Controllers\AccountController.cs" />
     <Compile Include="Areas\API\Controllers\ApplicationUsers1Controller.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsFeedController.cs" />
@@ -332,6 +333,7 @@
     <Folder Include="Areas\API\Models\" />
     <Folder Include="Areas\API\Views\Account\" />
     <Folder Include="Areas\API\Views\Shared\" />
+    <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
