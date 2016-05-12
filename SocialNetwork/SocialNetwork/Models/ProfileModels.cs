@@ -10,7 +10,7 @@ namespace SocialNetwork.Models
         [Key]
         public long Id { get; set; }
 
-        public virtual string DisplayName { get; }
+        public virtual string Display { get; }
 
         public long TimelineID { get; set; }
         [ForeignKey("TimelineID")]
@@ -18,7 +18,11 @@ namespace SocialNetwork.Models
 
         public Profile()
         {
-            Timeline = new Timeline();
+            if (Timeline == null)
+            {
+                Timeline = new Timeline();
+            }
+            
         }
         
     }
@@ -33,7 +37,7 @@ namespace SocialNetwork.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public override string DisplayName
+        public override string Display
         {
             get
             {
@@ -54,7 +58,7 @@ namespace SocialNetwork.Models
         
         public virtual ICollection<IdentityUser> Owners { get; set; }
 
-        public override string DisplayName
+        public override string Display
         {
             get
             {

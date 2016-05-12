@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SocialNetwork.Models;
 
 namespace SocialNetwork.Controllers
 {
@@ -11,13 +12,15 @@ namespace SocialNetwork.Controllers
         // GET: Profile
         public ActionResult Index()
         {
-            return View();
+            Profile profile = User.GetApplicationUser().SocialProfile;
+            return View("Profile", model: profile);
         }
 
         // GET: Profile/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            
+            return View("~/Views/Profile/Profile");
         }
 
         // GET: Profile/Create

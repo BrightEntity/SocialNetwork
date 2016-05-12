@@ -79,6 +79,18 @@ namespace SocialNetwork.Models
         [Display(Name = "Confirmer le mot de passe ")]
         [Compare("Password", ErrorMessage = "Le mot de passe et le mot de passe de confirmation ne correspondent pas.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [StringLength(255, ErrorMessage = "Le prénom est requis.")]
+        [DataType(DataType.Text)]
+        [Display(Name = "Prénom")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(255, ErrorMessage = "Le nom de famille est requis.")]
+        [DataType(DataType.Text)]
+        [Display(Name = "Nom de famille")]
+        public string LastName { get; set; }
     }
 
     public class ResetPasswordViewModel

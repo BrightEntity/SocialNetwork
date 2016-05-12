@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Security.Principal;
 
 namespace SocialNetwork.Models
 {
@@ -18,8 +19,14 @@ namespace SocialNetwork.Models
 
         public ApplicationUser()
         {
-            SocialProfile = new SocialProfile();
+            /*if (SocialProfile == null)
+            {
+                SocialProfile = new SocialProfile();
+            }*/
+            
         }
+
+        
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -27,6 +34,23 @@ namespace SocialNetwork.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Ajouter les revendications personnalisées de l’utilisateur ici
             return userIdentity;
+        }
+    }
+
+    public static class IPrincipalExtensions
+    {
+        public static ApplicationUser GetApplicationUser(this IPrincipal user)
+        {
+            UserManager<ApplicationUser> manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+
+            if (user.Identity.IsAuthenticated)
+            {
+                return manager.FindById(user.Identity.GetUserId());
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 
