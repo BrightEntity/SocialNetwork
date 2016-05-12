@@ -1,22 +1,49 @@
 ﻿@using Microsoft.AspNet.Identity
+@using SocialNetwork.Models
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-    {
-    @Html.AntiForgeryToken()
+    <div class="navbar-right">
+        <ul class="nav navbar-nav">
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></a>
+            <ul class="dropdown-menu" id="friends-dropdown">
+                
+            </ul></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-envelope"></span></a>
+            <ul class="dropdown-menu" id="messages-dropdown">
+                <li>Texte <a href>Lu</a></li>
+            </ul>
+            </li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-globe"></span></a>
+            <ul class="dropdown-menu" id="notifications-dropdown">
+                
+            </ul></li>
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Bonjour " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Se déconnecter</a></li>
-    </ul>
-    }
+            <li>
+                @Html.ActionLink(User.GetApplicationUser().SocialProfile.Display, "Index", "Profile", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink("Gérer le compte", "Index", "Manage")</li>
+                <li><a href="javascript:document.getElementById('LogOffForm').submit()">
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "LogOffForm", style = "display: inline;" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <span>Se déconnecter</span>
+
+                }</a>
+                    
+                </li>
+            </ul>
+            </li>
+        </ul>
+
+    </div>
+        
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("S’inscrire", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Se connecter", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    <ul class="nav navbar-form navbar-right">
+        @Html.Partial("_LoginInline")
     </ul>
 }

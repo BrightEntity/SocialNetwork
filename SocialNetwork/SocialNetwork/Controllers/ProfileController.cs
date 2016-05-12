@@ -3,21 +3,74 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SocialNetwork.Models;
+using Microsoft.AspNet.Identity;
+using SocialNetwork;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace SocialNetwork.Controllers
 {
     public class ProfileController : Controller
     {
+        ApplicationUserManager manager = new ApplicationUserManager(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+
         // GET: Profile
-        public ActionResult Index()
+        public ActionResult Index(string id = null)
         {
-            return View();
+            Profile profile = null;
+            if (id == null)
+            {
+                profile = User.GetApplicationUser().SocialProfile;
+            }
+            else
+            {
+                
+                try
+                {
+                    var ctx = new ApplicationDbContext();
+                    profile = ctx.Profiles.Find(new { Id = Convert.ToInt32(id) });
+                    if (profile == null)
+                    {
+                        return HttpNotFound("Profil introuvable.");
+                    }
+                    /*
+                     //TODO: A implémenter côté modèle : URL customisée du profil
+                    profile = ctx.Profiles.Find(new { Url = id });
+                    if (profile == null)
+                    {
+                        return HttpNotFound("Profil introuvable.");
+                    }
+                    */
+
+                    //TODO: Si le profil requiert une authentification pour être vu, renvoyer une erreur 404 si l'utilisateur est anonyme.
+
+                    //TODO: Si le profil a bloqué l'utilisateur en cours, renvoyer une erreur 404
+
+
+                }
+                catch (Exception)
+                {
+                    return HttpNotFound("Erreur dans la recherche du profil.");
+                }
+            }
+            
+            return View("Profile", model: profile);
         }
 
         // GET: Profile/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View();
+            try
+            {
+                var profile = manager.FindById(id).SocialProfile;
+                return View("Profile", model: profile);
+            }
+            catch (Exception)
+            {
+                return HttpNotFound("Utilisateur introuvable");
+            }
+            
+            
         }
 
         // GET: Profile/Create

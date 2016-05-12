@@ -140,3 +140,6 @@ C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\b
 C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\obj\Release\SocialNetwork.csprojResolveAssemblyReference.cache
 C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\obj\Release\SocialNetwork.dll
 C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\obj\Release\SocialNetwork.pdb
+C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\obj\Release\SocialNetwork.Migrations.init.resources
+C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\obj\Release\SocialNetwork.Migrations.Inheritance.resources
+C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\obj\Release\SocialNetwork.csproj.GenerateResource.Cache

@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div class="row">
+    <div class="col-xs-2">
+        <div class="media"><div class="media-heading"><img src style="width: 16px; height: 16px;" alt="" /></div><div class="media-body">Aymeric</div></div>
+    </div>
+
+    <div class="col-xs-7">
+        <h2>Fil d'actualité</h2>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                A quoi pensez vous ?
+            </div>
+
+            <div class="panel-body">
+                <form class="form-group">
+                    <textarea class="form-control" placeholder="Votre message"></textarea>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-3">
+        <div class="panel panel-default">
+            <div class="list-group">
+                <a href class="list-group-item">5 événements</a>
+            </div>
+            
+        </div>
+        Copyright @DateTime.Now.Year - @System.Configuration.ConfigurationManager.AppSettings["ApplicationName"]
+    </div>
+</div>
+

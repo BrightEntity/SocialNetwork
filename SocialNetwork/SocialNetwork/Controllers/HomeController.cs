@@ -8,6 +8,18 @@ namespace SocialNetwork.Controllers
 {
     public class HomeController : Controller
     {
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            if (filterContext.HttpContext.Request.IsAuthenticated)
+            {
+                filterContext.Result = RedirectToAction("Index", "NewsFeed");
+            }
+            else
+            {
+                base.OnActionExecuting(filterContext);
+            }
+        }
+
         public ActionResult Index()
         {
             return View();
