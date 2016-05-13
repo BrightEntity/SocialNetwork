@@ -1,0 +1,21 @@
+﻿@using SocialNetwork.Models
+@model LoginViewModel
+
+@using (Html.BeginForm("Login", "Account",FormMethod.Post, new { @class = "form-inline" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Html.NameFor(m => m.Email) })
+        <p>@Html.CheckBoxFor(m => m.RememberMe) @Html.LabelFor(m => m.RememberMe)</p>
+    </div>
+
+    <div class="form-group">
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.NameFor(m => m.Password) })
+        <p>@Html.ActionLink("Mot de passe oublié ?", "ForgotPassword", "Account")</p>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="form-control btn btn-primary navbar-btn">Connexion</button>
+    </div>
+
+}
