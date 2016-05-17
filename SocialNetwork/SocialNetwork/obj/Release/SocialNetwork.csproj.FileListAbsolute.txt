@@ -141,7 +141,6 @@ C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\o
 C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\obj\Release\SocialNetwork.dll
 C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\obj\Release\SocialNetwork.pdb
 C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\obj\Release\SocialNetwork.Migrations.init.resources
-C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\obj\Release\SocialNetwork.Migrations.Inheritance.resources
 C:\Users\Administrateur\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\obj\Release\SocialNetwork.csproj.GenerateResource.Cache
 C:\Users\jpj\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\bin\ApplicationInsights.config
 C:\Users\jpj\Source\Repos\SocialNetwork\SocialNetwork\SocialNetwork\bin\roslyn\csc.exe
