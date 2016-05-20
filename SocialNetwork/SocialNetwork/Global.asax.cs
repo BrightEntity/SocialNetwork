@@ -12,8 +12,7 @@ namespace SocialNetwork
     {
         protected void Application_Start()
         {
-            Application.Add("ApplicationName", "SocialNetwork");
-            
+                       
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

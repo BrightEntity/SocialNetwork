@@ -10,12 +10,18 @@ namespace SocialNetwork.Areas.API.Controllers
 {
     public class AccountController : ApiController
     {
-        
+        ApplicationDbContext ctx;
+
+        public AccountController():base()
+        {
+            ctx = new ApplicationDbContext();
+        }
 
         // GET: api/Account
-        public IEnumerable<string> Get()
+        public IEnumerable<ApplicationUser> Get()
         {
-            return new string[] { "value1", "value2" };
+            IEnumerable<ApplicationUser> users = ctx.Users;
+            return users;
         }
 
         // GET: api/Account/5
